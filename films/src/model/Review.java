@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Review {
     public List<String> authors;
-    private String description;
-    private double score;
+    private final String description;
+    private final double score;
 
     public Review(List<String> authors, String description, double score) {
         if (score < 0 || score > 10){
