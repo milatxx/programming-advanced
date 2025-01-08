@@ -1,21 +1,23 @@
 package model;
 
+import java.util.List;
+
 public class Review {
-    private String author;
+    public List<String> authors;
     private String description;
     private double score;
 
-    public Review(String author, String description, double score) {
+    public Review(List<String> authors, String description, double score) {
         if (score < 0 || score > 10){
             throw new IllegalArgumentException("Score must be between 0 and 10.");
         }
-        this.author = author;
+        this.authors = authors;
         this.description = description;
         this.score = score;
     }
 
-    public String getAuthor() {
-        return author;
+    public List<String> getAuthors() {
+        return this.authors;
     }
 
     public String getDescription() {
@@ -29,7 +31,7 @@ public class Review {
     @Override
     public String toString() {
         return "Review{" +
-                "author='" + author + '\'' +
+                "author='" + authors + '\'' +
                 ", description='" + description + '\'' +
                 ", score=" + score +
                 '}';
