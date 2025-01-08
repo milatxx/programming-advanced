@@ -40,5 +40,11 @@ Dit project is gebouwd als onderdeel van mijn examenopdracht. Het laadt een grot
 - Een grafische gebruikersinterface (GUI) maken voor de applicatie.
 - Gegevens opslaan in een database in plaats van een CSV-bestand.
 
+## 📄 Technische Documentatie
+- Dit project bevat Javadoc-commentaar voor belangrijke klassen en methoden, wat helpt bij het begrijpen van de code en het gebruik ervan.
+
+## 🧠 Complexe Logica
+- Bij het verwerken van de CSV-bestanden wordt gebruikgemaakt van geavanceerde validatietechnieken om ervoor te zorgen dat de data correct wordt ingelezen en verwerkt.
+
 ## 🤖 Externe hulpmiddelen
 - ChatGPT (OpenAI): Gebruikt als hulpmiddel voor optimalisatie van foutafhandeling, verbeteringen aan zoekfunctionaliteiten, suggesties voor codekwaliteit en documentatievoorbeelden.
