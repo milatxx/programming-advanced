@@ -8,15 +8,14 @@ public class Film {
     private String title;
     private String director;
     private int releaseYear;
-    private String genre;
     private List<Review> reviews;
 
-    public Film(String title, String director, int releaseYear, String genre, List<Review> reviews) {
+    public Film(String title, String director, int releaseYear,List<Review> reviews) {
         this.title = title;
         this.director = director;
         this.releaseYear = releaseYear;
-        this.genre = genre;
         this.reviews = new ArrayList<>();
+        this.reviews = reviews;
     }
 
     public String getTitle() {
@@ -29,10 +28,7 @@ public class Film {
 
     public int getReleaseYear() {
         return releaseYear;
-    }
 
-    public String getGenre() {
-        return genre;
     }
 
     public List<Review> getReviews() {
@@ -52,7 +48,6 @@ public class Film {
                 "title='" + title + '\'' +
                 ", director='" + director + '\'' +
                 ", releaseYear=" + releaseYear +
-                ", genre='" + genre + '\'' +
                 ", reviews=" + reviews +
                 '}';
     }
