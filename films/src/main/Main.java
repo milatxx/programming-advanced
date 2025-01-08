@@ -5,13 +5,14 @@ import model.Review;
 import service.FilmService;
 import util.CSVReader;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Netflix Catalog");
-        System.out.println("Find, browse znd review movies!");
+        System.out.println("Find, browse and review movies!");
 
 
         List<Film> films = CSVReader.readFilmsFromCSV("resources/netflix_titles.csv");
@@ -43,7 +44,7 @@ public class Main {
 
                     for (Film film : films) {
                         if (film.getTitle().equalsIgnoreCase(filmTitle)) {
-                            film.addReview(new Review(author, description, score));
+                            film.addReview(new Review(Collections.singletonList(author), description, score));
                             System.out.println("Review added!");
                         }
                     }
