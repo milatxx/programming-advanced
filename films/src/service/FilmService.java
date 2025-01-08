@@ -3,7 +3,6 @@ package service;
 import model.Film;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FilmService {
     private final List<Film> films;
