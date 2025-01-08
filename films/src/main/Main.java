@@ -12,17 +12,13 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Netflix Catalog");
         System.out.println("Find, browse znd review movies!");
-    }
 
-    List<Film> films = CSVReader.readFilmsFromCSV("resources/netflix_titles.csv");
-    FilmService filmService = new FilmService(films);
-    Scanner scanner = new Scanner(System.in);
 
-        while(true)
+        List<Film> films = CSVReader.readFilmsFromCSV("resources/netflix_titles.csv");
+        FilmService filmService = new FilmService(films);
+        Scanner scanner = new Scanner(System.in);
 
-    {
-
-        {
+        while (true) {
             System.out.println("1. Add a review");
             System.out.println("2. Search for a movie by title");
             System.out.println("3. Search for movies by director");
@@ -43,7 +39,7 @@ public class Main {
                     String description = scanner.nextLine();
                     System.out.println("Score: ");
                     double score = scanner.nextDouble();
-                    scanner.nextLine():
+                    scanner.nextLine();
 
                     for (Film film : films) {
                         if (film.getTitle().equalsIgnoreCase(filmTitle)) {

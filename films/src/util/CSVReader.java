@@ -19,7 +19,7 @@ public class CSVReader {
             while ((line = br.readLine()) != null){
                 String[] data = line.split(splitBy);
                 if (data.length >= 4) {
-                    films.add(new Film(data[0],data[1],Integer.parseInt(data[2]), data[3]));
+                    films.add(new Film(data[0],data[1],Integer.parseInt(data[2]), data[3], new ArrayList<>()));
 
                 }
             }

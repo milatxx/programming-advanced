@@ -1,5 +1,6 @@
 package model;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Film {
         this.director = director;
         this.releaseYear = releaseYear;
         this.genre = genre;
-        this.reviews = reviews;
+        this.reviews = new ArrayList<>();
     }
 
     public String getTitle() {
@@ -40,7 +41,7 @@ public class Film {
 
     public void addReview (Review review){
         if (review == null) {
-            throw new illegalArgumentException("Review cannot be null.")
+            throw new IllegalArgumentException("Review cannot be null.");
         }
         this.reviews.add(review);
     }
