@@ -4,11 +4,25 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The {@code Film} class represents a movie with a title, director, release year,
+ * and a list of reviews. It provides methods to retrieve movie details and add reviews.
+ */
+
 public class Film {
     private String title;
     private String director;
     private int releaseYear;
     private List<Review> reviews;
+
+    /**
+     * Constructs a new {@code Film} object.
+     *
+     * @param title       The title of the film.
+     * @param director    The director of the film.
+     * @param releaseYear The release year of the film.
+     * @param reviews     The list of reviews for the film.
+     */
 
     public Film(String title, String director, int releaseYear,List<Review> reviews) {
         this.title = title;
