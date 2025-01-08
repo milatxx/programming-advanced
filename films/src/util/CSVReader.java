@@ -12,14 +12,13 @@ public class CSVReader {
     public static List<Film> readFilmsFromCSV(String filePath){
         List<Film> films = new ArrayList<>();
         String line;
-        String splitBy = ",";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))){
             br.readLine();
             while ((line = br.readLine()) != null){
-                String[] data = line.split(splitBy);
-                if (data.length >= 4) {
-                    films.add(new Film(data[0],data[1],Integer.parseInt(data[2]), data[3], new ArrayList<>()));
+                List<String> data = parseCSVLine(line);
+                if (data.size() >= 8) {
+                    films.add(new Film(data.get(2),data.get(3),Integer.parseInt(data.get(7)),new ArrayList<>()));
 
                 }
             }
@@ -27,5 +26,25 @@ public class CSVReader {
             System.err.println("Error reading CSV file: " + e.getMessage());
         }
         return films;
+    }
+
+    private static List<String> parseCSVLine(String line) {
+        List<String> result = new ArrayList<>();
+        StringBuilder currentField = new StringBuilder();
+        boolean insideQuotes = false;
+
+        for (char c : line.toCharArray()){
+            if (c == '\"') {
+                insideQuotes= !insideQuotes;
+            } else if (c == ',' && !insideQuotes){
+                result.add(currentField.toString().trim());
+                currentField.setLength(0);
+            } else {
+                currentField.append(c);
+
+            }
+        }
+        result.add(currentField.toString().trim());
+        return result;
     }
 }
