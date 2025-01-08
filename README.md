@@ -39,3 +39,6 @@ Dit project is gebouwd als onderdeel van mijn examenopdracht. Het laadt een grot
 - Mogelijkheid om films op genre te zoeken.
 - Een grafische gebruikersinterface (GUI) maken voor de applicatie.
 - Gegevens opslaan in een database in plaats van een CSV-bestand.
+
+## 🤖 Externe hulpmiddelen
+- ChatGPT (OpenAI): Gebruikt als hulpmiddel voor optimalisatie van foutafhandeling, verbeteringen aan zoekfunctionaliteiten, suggesties voor codekwaliteit en documentatievoorbeelden.
