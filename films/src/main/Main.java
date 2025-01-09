@@ -83,14 +83,38 @@ public class Main {
                 case 3:
                     // Search for movies by director
                     System.out.println("Director: ");
-                    String director = scanner.nextLine();
-                    filmService.searchByDirector(director).forEach(System.out::println);
+                    String director = scanner.nextLine().trim();
+                    if (director.isEmpty()){
+                        System.out.println("You must enter a valid director name.Please try again.");
+                    } else {
+                        List<Film> searchResults = filmService.searchByDirector(director);
+                        if (searchResults.isEmpty()){
+                            System.out.println("No movies found directed by \"" + director + "\". Please try again." );
+                        } else {
+                            searchResults.forEach(System.out::println);
+                        }
+                    }
                     break;
                 case 4:
                     // Search for movies by release year
                     System.out.println("Year: ");
-                    int year = scanner.nextInt();
-                    filmService.searchByYear(year).forEach(System.out::println);
+                    String yearInput = scanner.nextLine().trim();
+
+                    if (yearInput.isEmpty()){
+                        System.out.println("You must enter a valid year. Please try again.");
+                    } else {
+                        try {
+                            int year = Integer.parseInt(yearInput);
+                            List<Film> searchResults = filmService.searchByYear(year);
+                            if (searchResults.isEmpty()) {
+                                System.out.println("No movies found from the year " + year + ". Please try again.");
+                            } else {
+                                searchResults.forEach(System.out::println);
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid input! Please enter a valid year.");
+                        }
+                    }
                     break;
                 case 5:
                     // Exit the application
