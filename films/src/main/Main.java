@@ -68,8 +68,17 @@ public class Main {
                 case 2:
                     // Search for a movie by title
                     System.out.println("Title: ");
-                    String title = scanner.nextLine();
-                    filmService.searchByTitle(title).forEach(System.out::println);
+                    String title = scanner.nextLine().trim();
+                    if (title.isEmpty()){
+                        System.out.println("You must enter a valid movie title.Please try again.");
+                    } else {
+                    List<Film> searchResults = filmService.searchByTitle(title);
+                    if (searchResults.isEmpty()){
+                        System.out.println("No movies found with the title \"" + title + "\".Please try again.");
+                    } else {
+                        searchResults.forEach(System.out::println);
+                    }
+                    }
                     break;
                 case 3:
                     // Search for movies by director
